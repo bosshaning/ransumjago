@@ -1,0 +1,67 @@
+[
+    {
+        "id" : 1,
+        "type": "fattening",
+        "gender": 0,
+        "weight": 100,
+        "adg" : 1,
+        "dmi" : 3.3,
+        "me" : 7.94,
+        "tdn" : 2.2,
+        "cp" : 0.541,
+        "ca" : 0.025,
+        "p" : 0.015
+    },
+    {
+        "id" : 2,
+        "type": "fattening",
+        "gender": 0,
+        "weight": 150,
+        "adg" : 1,
+        "dmi" : 3.0,
+        "me" : 10.93,
+        "tdn" : 3.0,
+        "cp" : 0.607,
+        "ca" : 0.027,
+        "p" : 0.016
+    },
+    {
+        "id" : 3,
+        "type": "fattening",
+        "gender": 0,
+        "weight": 200,
+        "adg" : 1,
+        "dmi" : 2.8,
+        "me" : 13.51,
+        "tdn" : 3.7,
+        "cp" : 0.690,
+        "ca" : 0.027,
+        "p" : 0.017
+    },
+    {
+        "id" : 4,
+        "type": "fattening",
+        "gender": 0,
+        "weight": 200,
+        "adg" : 1.1,
+        "dmi" : 2.8,
+        "me" : 14.23,
+        "tdn" : 3.9,
+        "cp" : 0.714,
+        "ca" : 0.030,
+        "p" : 0.018
+    },
+    {
+        "id" : 5,
+        "type": "fattening",
+        "gender": 0,
+        "weight": 250,
+        "adg" : 1,
+        "dmi" : 2.4,
+        "me" : 15.84,
+        "tdn" : 4.3,
+        "cp" : 0.819,
+        "ca" : 0.027,
+        "p" : 0.017
+    }
+]

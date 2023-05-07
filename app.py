@@ -4,35 +4,6 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-
-@app.route('/')
-def test_calculate() :
-    # Import required libraries
-    from scipy.optimize import linprog
-
-    # Set the inequality constraints matrix
-    # Note: the inequality constraints must be in the form of <=
-    A = [[-8.8, -48.7], [-48.7, -49.3]]
-    # Set the inequality constraints vector
-    b = [-14.55, -10.22]
-
-    # Set the coefficients of the linear objective function vector
-    c = [2500, 3000]
-
-    A_eq = [[1,1]]
-    b_eq = [1]
-
-    # Solve linear programming problem
-    res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, method='highs-ipm')
-
-    hasil = []
-    hasil.append(res.fun)
-    persen = []
-    for i in range (len(res.x)):
-        persen.append(res.x[i])
-    hasil.append(persen)
-    return hasil
-
 @app.route('/type', methods = ['GET'])
 def gettype():
     f = open('typeofmaintenance.json')

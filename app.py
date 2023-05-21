@@ -64,16 +64,21 @@ def calculate() :
     # Solve linear programming problem
     res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
 
-    hasil = []
-    hasil.append(wransum)
-    hasil.append(b_out)
-    hasil.append(res.fun)
+    data_hasil = {}
+    # hasil = []
+    # hasil.append(wransum)
+    # hasil.append(b_out)
+    # hasil.append(res.fun)
     if (res.fun != None):
         persen = []
         for i in range (len(res.x)):
             persen.append(res.x[i])
-        hasil.append(persen)
-    return hasil
+        # hasil.append(persen)
+        data_hasil['percentage'] = persen
+    data_hasil['wransum'] = wransum
+    data_hasil['nutrition'] = b_out
+    data_hasil['price'] = res.fun
+    return data_hasil
 
 @app.route('/calculatecustom', methods = ['POST'])
 def calculatecustom() :
@@ -113,15 +118,18 @@ def calculatecustom() :
     # Solve linear programming problem
     res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
     
-    hasil = []
-    hasil.append(res.fun)
+    # hasil = []
+    # hasil.append(res.fun)
     if (res.fun != None):
         persen = []
         for i in range (len(res.x)):
             persen.append(res.x[i])
-        hasil.append(persen)
-    hasil.append(res.fun)
-    return hasil
+        # hasil.append(persen)
+    data_hasil = {}
+
+    data_hasil['price'] = res.fun
+    data_hasil['percentage'] = persen
+    return data_hasil
 
 if __name__ == '__main__' :
     app.run(debug=True)

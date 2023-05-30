@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-# from flask_cors import CORS
+from flask_cors import CORS
 import json
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
-# CORS(app)
+CORS(app)
 
 @app.route('/type', methods = ['GET'])
 def gettype():

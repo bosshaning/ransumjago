@@ -23,8 +23,7 @@ def calculatemulti() :
     dummyItems = request.json['item']
     result = []
     for header in headers:
-        bobot = header['dmi']
-        wransum = header['weight']*bobot/100
+        wransum = header['dmi']
         p_tdn = header['tdn'] / wransum*100
         p_cp = header['cp'] / wransum*100
         p_ca = header['ca'] / wransum*100

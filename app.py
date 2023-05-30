@@ -61,7 +61,7 @@ def calculatemulti() :
         b_eq = [1]
 
         # Solve linear programming problem
-        res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='interior-point')
+        res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
 
         data_hasil = {}
         if (res.fun != None):
@@ -74,7 +74,7 @@ def calculatemulti() :
         data_hasil['nutrition'] = b_out
         data_hasil['price'] = res.fun
         result.append(data_hasil)
-    return Response(result, mimetype='application/json')
+    return result
 
 @app.route('/calculatecustom', methods = ['POST'])
 def calculatecustom() :
@@ -112,7 +112,7 @@ def calculatecustom() :
     b_eq = [1]
 
     # Solve linear programming problem
-    res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='interior-point')
+    res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
     
     # hasil = []
     # hasil.append(res.fun)

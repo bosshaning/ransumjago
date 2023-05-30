@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 # from flask_cors import CORS
-from flask_cors import cross_origin
 import json
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 # CORS(app)
 
 @app.route('/type', methods = ['GET'])
@@ -18,7 +18,6 @@ def getitem():
     return data
 
 @app.route('/calculatemulti', methods = ['POST'])
-@cross_origin()
 def calculatemulti() :
     headers = request.json['head']
     dummyItems = request.json['item']
@@ -78,7 +77,6 @@ def calculatemulti() :
     return jsonify(result)
 
 @app.route('/calculatecustom', methods = ['POST'])
-@cross_origin()
 def calculatecustom() :
     header = request.json['head']
     dummyItems = request.json['item']

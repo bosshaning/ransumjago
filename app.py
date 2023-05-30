@@ -61,7 +61,7 @@ def calculatemulti() :
         b_eq = [1]
 
         # Solve linear programming problem
-        res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
+        res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='interior-point')
 
         data_hasil = {}
         if (res.fun != None):
@@ -112,7 +112,7 @@ def calculatecustom() :
     b_eq = [1]
 
     # Solve linear programming problem
-    res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
+    res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='interior-point')
     
     # hasil = []
     # hasil.append(res.fun)

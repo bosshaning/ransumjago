@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 import json
 app = Flask(__name__)
@@ -74,7 +74,7 @@ def calculatemulti() :
         data_hasil['nutrition'] = b_out
         data_hasil['price'] = res.fun
         result.append(data_hasil)
-    return jsonify(result)
+    return Response(result, mimetype='application/json')
 
 @app.route('/calculatecustom', methods = ['POST'])
 def calculatecustom() :
@@ -125,7 +125,7 @@ def calculatecustom() :
 
     data_hasil['price'] = res.fun
     data_hasil['percentage'] = persen
-    return jsonify(data_hasil)
+    return Response(data_hasil, mimetype='application/json')
 
 if __name__ == '__main__' :
     app.run(debug=True)

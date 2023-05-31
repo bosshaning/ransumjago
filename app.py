@@ -61,7 +61,9 @@ def calculatemulti() :
 
         # Solve linear programming problem
         res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
-
+        if (res.fun == None & b[1] != 0):
+            b = [-int(p_cp), 0, -int(p_ca), -int(p_p)]
+            res = linprog(c, A_ub=A, b_ub=b, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='highs-ipm')
         data_hasil = {}
         if (res.fun != None):
             persen = []

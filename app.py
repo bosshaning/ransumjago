@@ -123,7 +123,7 @@ def calculatecustom() :
 
     data_hasil['price'] = res.fun
     data_hasil['percentage'] = persen
-    return Response(data_hasil, mimetype='application/json')
+    return data_hasil
 
 if __name__ == '__main__' :
     app.run(debug=True)

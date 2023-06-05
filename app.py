@@ -114,8 +114,8 @@ def calculatecustom() :
     
     # hasil = []
     # hasil.append(res.fun)
+    persen = []
     if (res.fun != None):
-        persen = []
         for i in range (len(res.x)):
             persen.append(res.x[i])
         # hasil.append(persen)
